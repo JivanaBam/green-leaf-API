@@ -1,6 +1,7 @@
 import express from "express";
 import connectDB from "./connect.db.js";
-import userRoutes from "./src/admin/admin.route.js";
+import adminRoutes from "./src/admin/admin.route.js";
+import categoriesRoutes from "./src/dashboard/categories/categories.route.js";
 
 const app = express();
 
@@ -11,7 +12,8 @@ app.use(express.json());
 connectDB();
 
 // register routes
-app.use(userRoutes);
+app.use(adminRoutes);
+app.use(categoriesRoutes);
 
 // network port and server
 const PORT = 8080;
